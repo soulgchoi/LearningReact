@@ -16,32 +16,38 @@
 
 - `Route` 는 이렇게
 
-        import { Route } from "react-router-dom";
-        import MyComponent from "components/MyComponent";
-        <Route
-        	 exact path="/my/url/:propsname"
-        	 component={MyComponent}
-        />
+    ```typescript
+    import { Route } from "react-router-dom";
+    import MyComponent from "components/MyComponent";
+    <Route
+    	 exact path="/my/url/:propsname"
+    	 component={MyComponent}
+    />
+    ```
 
 - `props` 전달할 상위 컴포넌트
 
-        import { Link } from 'react-router-dom'
-        ...
-        render() {
-        	return (
-        		<div>
-        			<Link to={`my/url/${propsname}`}></Link>
-        		</div>
+    ```typescript
+    import { Link } from 'react-router-dom'
+    ...
+    render() {
+    	return (
+    		<div>
+    			<Link to={`my/url/${propsname}`}></Link>
+    		</div>
+    ```
     
 - `props` 받는 하위 컴포넌트
 
-        import { RouteComponentProps } from 'react-router-dom'
-        
-        const MyComponent = (props: RouteComponentProps<{ propsname: type }>) => {
-        	return (
-        		<div>
-        			{props.match.params.propsname}
-        		</div>
+    ```typescript
+    import { RouteComponentProps } from 'react-router-dom'
+    
+    const MyComponent = (props: RouteComponentProps<{ propsname: type }>) => {
+    	return (
+    		<div>
+    			{props.match.params.propsname}
+    		</div>
+    ```
 
 아직 클래스형으로 구현하는 방법은 익히지 못했으므로 우선 함수형으로 작성한다.
 

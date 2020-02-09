@@ -159,7 +159,12 @@ TypeError: cannot read property “temp” of undefined
 
 ### 🌵 Objects are not valid as a React child (found: object with keys {}). ~~
 
-말 그대로 `Object` 를 주면 안될 때.. 주로 네이밍 문제로 발생했다. 같은 이름의 변수를 함부로 쓰지 말자!
+말 그대로 `Object` 를 주면 안될 때.. 
+
+- 변수 이름이 겹쳤을 때
+- `object.key` 로 들어가야 하는데 object 를 내보내려고 했을 때
+
+지금까지 발생한건 두 경우
 
 ### 🌵 Type 'string | ArrayBuffer | null' is not assignable to type 'string'
 

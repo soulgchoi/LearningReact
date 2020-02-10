@@ -61,7 +61,7 @@ fileType: new File([""], "", {type: ""})
 
 - 참고 링크
 
-### 🌴  FormDate 를 console 에 출력하고 싶다!
+### 🌴  FormData 를 console 에 출력하고 싶다!
 
 `formdata = new FormData();`  로 새 formdata 를 만들었으면,
 
@@ -81,7 +81,7 @@ fd.append("image", this.state.selectedFile);
 fd.set("data", this.state.content)
 ```
 
-### 🌴 JSX로 `` 안에 `for` 를 넣고 싶다!
+### 🌴 JSX로 `<Label>` 안에 `for` 를 넣고 싶다!
 
 `for` 대신 `htmlFor` 를 쓰면 된다^^.
 
@@ -155,7 +155,7 @@ TypeError: cannot read property “temp” of undefined
 
 → `this.setState({ myArray: this.state.myArray.concat(들어갈 배열)})` 로 추가한다. ( 파이썬에서 `myArray.add(들어갈 배열)` 느낌)
 
-### 🌵 All files must be modules when the '--isolatedModules' flag is provided
+### 🌵 All files must be modules when the '-- isolatedModules' flag is provided
 
 거의 빈 파일이 있을 때 발생했다.
 

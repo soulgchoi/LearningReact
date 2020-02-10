@@ -133,6 +133,10 @@ onClick: function(event){
 <tag onClick={() => { func1(); func2(); }}/>
 ```
 
+### 🌴 `<Link>` 에 Object 형태의 `props` 를 전달하고 싶다!
+
+아무리 해도 안된다😢. Redux 를 쓰기로 결심했다!
+
 ---
 
 
@@ -239,3 +243,7 @@ var file = e.target.files[0];
   `loadend` 이벤트 핸들러. 이 이벤트는 읽기 동작이 끝났을 때마다 발생합니다. (읽기의 성공이나 실패 여부는 상관 않습니다.)
 
   🥕 **Blob 객체**는 파일과 흡사한 불변 객체로 raw data입니다. 데이터를 표현하기 때문에 필연적으로 자바스크립트 네이티브 포맷이 아닙니다. File 인터페이스는 기본적으로 Blob을 통해 이뤄지며, blob의 함수들을 상속받고 확장하여 사용자 시스템의 파일을 지원해줍니다. (https://developer.mozilla.org/ko/docs/Web/API/Blob)
+
+### 🌵 Object is possibly 'null' 에러 무시해버리기
+
+tsconfig.json 에 `"strictNullChecks": false,` 를 추가한다.

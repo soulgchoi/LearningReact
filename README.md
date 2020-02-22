@@ -61,7 +61,7 @@ fileType: new File([""], "", {type: ""})
 
 - 참고 링크
 
-### 🌴  FormDate 를 console 에 출력하고 싶다!
+### 🌴  FormData 를 console 에 출력하고 싶다!
 
 `formdata = new FormData();`  로 새 formdata 를 만들었으면,
 
@@ -81,7 +81,7 @@ fd.append("image", this.state.selectedFile);
 fd.set("data", this.state.content)
 ```
 
-### 🌴 JSX로 `` 안에 `for` 를 넣고 싶다!
+### 🌴 JSX로 `<Label>` 안에 `for` 를 넣고 싶다!
 
 `for` 대신 `htmlFor` 를 쓰면 된다^^.
 
@@ -133,6 +133,10 @@ onClick: function(event){
 <tag onClick={() => { func1(); func2(); }}/>
 ```
 
+### 🌴 `<Link>` 에 Object 형태의 `props` 를 전달하고 싶다!
+
+아무리 해도 안된다😢. Redux 를 쓰기로 결심했다!
+
 ### 🌴 이미지 파일을 POST 요청으로 저장하고 싶다!
 
 🥥 파일 형태를 request 로 보낼 때
@@ -183,9 +187,9 @@ await axios.post(restBaseApi + "/rest/PostFile", files,
 
 html 태그를 위와 같이 작성한다.
 
+
+
 ---
-
-
 
 ## 🤮 에러
 
@@ -201,7 +205,7 @@ TypeError: cannot read property “temp” of undefined
 
 → `this.setState({ myArray: this.state.myArray.concat(들어갈 배열)})` 로 추가한다. ( 파이썬에서 `myArray.add(들어갈 배열)` 느낌)
 
-### 🌵 All files must be modules when the '--isolatedModules' flag is provided
+### 🌵 All files must be modules when the '-- isolatedModules' flag is provided
 
 거의 빈 파일이 있을 때 발생했다.
 
@@ -289,3 +293,7 @@ var file = e.target.files[0];
   `loadend` 이벤트 핸들러. 이 이벤트는 읽기 동작이 끝났을 때마다 발생합니다. (읽기의 성공이나 실패 여부는 상관 않습니다.)
 
   🥕 **Blob 객체**는 파일과 흡사한 불변 객체로 raw data입니다. 데이터를 표현하기 때문에 필연적으로 자바스크립트 네이티브 포맷이 아닙니다. File 인터페이스는 기본적으로 Blob을 통해 이뤄지며, blob의 함수들을 상속받고 확장하여 사용자 시스템의 파일을 지원해줍니다. (https://developer.mozilla.org/ko/docs/Web/API/Blob)
+
+### 🌵 Object is possibly 'null' 에러 무시해버리기
+
+tsconfig.json 에 `"strictNullChecks": false,` 를 추가한다.

@@ -133,6 +133,56 @@ onClick: function(event){
 <tag onClick={() => { func1(); func2(); }}/>
 ```
 
+### 🌴 이미지 파일을 POST 요청으로 저장하고 싶다!
+
+🥥 파일 형태를 request 로 보낼 때
+
+`FormData()` 로 보낸다. file 은 보통 `event.tartget.files` 안에 `Array` 형태로 들어있는데, 하나만 보낼 땐 `event.target.files[0]` 을 저장해서 보내면 되지만, 나는 전체 `files`가 들어있는 `FileList` 를 요청보내고 싶었다. 하지만 `FileList` 가 `FormData` 에 제대로 담기지 않는 문제를 겪었다.
+
+```typescript
+var value = e.target.files;
+for (let i = 0; i < value.length; i++) {
+    PostingActions.changeFileInput(value[i]);
+}
+```
+
+`for` loop 로 파일들을 `[]`에 저장한 뒤,
+
+```typescript
+const files = new FormData()
+for (let j = 0; j < selectedfiles.length; j++) {
+    files.append("files", selectedfiles[j])
+}
+```
+
+이 리스트 안의 파일들을 다시 `FormData` 에 저장한다.
+
+```typescript
+await axios.post(restBaseApi + "/rest/PostFile", files,
+{
+    headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + token
+    }
+})
+.then(res => {
+    console.log(res)
+})
+.catch(err => console.log(err))
+```
+
+`files` 라는 이름으로 저장한 `FormData` 를 보낸다.
+
+이 때, 헤더에 `"Content-Type": "multipart/form-data"` 를 쓰지 않으면 CORS 에러가 발생한다.
+
+🥥 파일을, 여러개, 이미지만
+
+```html
+<input tyle="file" multiple accept="image/*"/>
+```
+
+html 태그를 위와 같이 작성한다.
+
 ---
 
 

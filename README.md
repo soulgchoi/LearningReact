@@ -187,7 +187,7 @@ await axios.post(restBaseApi + "/rest/PostFile", files,
 
 html 태그를 위와 같이 작성한다.
 
-### 🌴 번외. JavaScript 의 Date 를 yyyy-mm-dd 형식으로 만들기
+### 🌴 번외. TypeScript 의 Date 를 yyyy-mm-dd 형식으로 만들기
 
 매번 찾아볼 수 없어 한번 여기에 올리기로...
 

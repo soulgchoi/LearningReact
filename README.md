@@ -203,6 +203,16 @@ dateFunc() {
   }
 ```
 
+### 🌴 props 가 없어서 render가 제대로 되지 않는다!
+
+```typescript
+if (this.props === null) {
+	return <div />
+}
+```
+
+최초에는 빈 div 태그를 리턴해주면, mount 됐을 때 다시 렌더링 된다. 굉장히 간단한 것 같으면서도 몰랐다.
+
 
 
 ---
@@ -313,3 +323,11 @@ var file = e.target.files[0];
 ### 🌵 Object is possibly 'null' 에러 무시해버리기
 
 tsconfig.json 에 `"strictNullChecks": false,` 를 추가한다.
+
+### 🌵 Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.
+
+@https://www.codewall.co.uk/diagnosing-reacts-cannot-update-during-an-existing-state-transition-error/
+
+사실 이 에러가 떠도 동작을 하긴 한다!
+
+`componentDidUpdate` 함수를 쓸 때 발생했다.
